@@ -240,3 +240,50 @@ Exemplos: </br>
         console.log(resultado); // Saída: 8
 
     ```
+## Estrutura de Repetição
+- Estruturas de repetição são usadas para executar um bloco de código várias  vezes, dependendo de uma condição. Elas permitem que você execute um conjunto de instruções enquanto uma condição for verdadeira. 
+
+- Existem dois tipos principais de estruturas de repetição em JavaScript: `while` e `for`. </br>
+
+###  1.1 Estrutura de Repetição While
+- A estrutura de repetição `while` executa um bloco de código enquanto uma condição for verdadeira.
+- A sintaxe básica da estrutura de repetição `while` é a seguinte:
+
+### 1.2. Sintaxe do while
+---
+
+    ```JS
+
+        while (condição) {  // Condição que deve ser verdadeira para executar o bloco de código.
+
+            // Bloco de código a ser executado
+
+        }
+
+
+    ```
+
+
+- **Condição**: Uma expressão que será avaliada antes de cada iteração. Enquanto a condição for verdadeira, o bloco de código será executado.
+- **Bloco de código**: O conjunto de instruções que será repetido enquanto a condição for verdadeira.
+
+---
+
+###  1.3. Exemplo de uso do while
+---
+
+> Vamos começar com um exemplo simples que **imprime números de 1 a 10 no console**:
+
+    ```JS
+
+        let contador = 1;  // Inicializando a variável contador com o valor 1 o contador é um controlador de fluxo do loop.
+
+        while (contador <= 10) {  // Condição que deve ser verdadeira para executar o bloco de código.
+
+            console.log(contador); // Bloco de código a ser executado.
+            contador++
+
+        }
+
+    ```
+
