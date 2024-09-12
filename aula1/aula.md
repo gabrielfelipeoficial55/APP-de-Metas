@@ -120,9 +120,6 @@ para resolver problemas.
 ### 1. Atribuição
 - São usados para atribuir valores a variáveis. </br>
 Exemplos: </br> 
-    
-    
-    ``` JS
 
     ``` JS 
 
@@ -132,3 +129,102 @@ Exemplos: </br>
 
     ```
 
+### 2. Operador de Concatenação
+- São usados para concatenar strings. </br>
+Exemplos: </br>
+
+    ```JS  
+    
+        const metas =  ["Beber", "Água"];  // Array de strings
+
+        onsole.log(metas[0] + ", " +  metas[1]); // Concatenação de strings.
+    
+    ```
+
+> **Dica:**
+>  Para concatenar strings, você pode usar o operador `+`,
+>
+>  1. Mas o operador `+` não é usado para fazer operações matemáticas?
+>
+>       - Sim, ele também é usado para fazer operações matemáticas, mas pode ser usado para    concatenar strings também.
+> 
+>  2. Mas então como o JavaScript sabe quando usar para operação matemática ou concatenar strings?
+>
+>       - O JavaScript sabe porque ele analisa o tipo de dados que você está usando. 
+>       - Se você estiver usando números, ele fará a operação matemática, 
+>       - Se você estiver usando strings, ele fará a concatenação.
+
+
+## Estruras de Dados 
+
+### 1.  Arrays
+- É uma estrutura de dados que permite armazenar múltiplos valores em uma única variável. Arrays são úteis para armazenar coleções de dados que podem ser acessados e manipulados de forma sequencial. </br>
+Exemplos: </br>
+    
+    ``` JS
+        const metas = ["Gabriel", "Alô!"]; // Criando e armazenando arrays do  tipo string.
+
+
+        console.log(metas[1] + ", " + metas[0]);  // Concatenação de strings.
+
+
+    ```
+
+###  2. Objetos
+- Em JavaScript, um objeto é uma coleção de propriedades, onde cada propriedade é uma associação entre uma chave (ou nome) e um valor. Os objetos permitem agrupar dados relacionados e funções que podem ser usadas para operar nesses dados. </br>
+Exemplos: </br>
+    
+    ```JS
+
+        const meta = { //  Criando objetos e armazenando propriedades e valores.
+
+
+            value: "Ler um livro por mês", //  Propriedade: Valor
+            checked: false // Propriedade: Valor
+
+
+        }
+
+        console.log(meta.value); // Acessando propriedades e valores do object meta.
+
+
+    ```
+> **Dica**
+> Note que para acessar  as propriedades e valores de um objeto, você pode usar o operador `.`.  </br>
+> 
+>   ``` JS
+>
+>       console.log(meta.value)  // Acessando propriedades e valores do object meta.
+>
+>   ```
+
+
+### 3. Functions 
+ - Em JavaScript, uma função é um bloco de código projetado para executar uma tarefa específica. Funções permitem que você encapsule um conjunto de instruções que podem ser reutilizadas em diferentes partes do seu código, facilitando a organização, manutenção e a reutilização do código. </br>
+
+#### Para Que Servem as Funções?
+##### As funções servem para:
+
+> - **Reutilização de Código**: Você pode definir uma função uma vez e chamá-la sempre que precisar realizar a mesma tarefa.
+> - **Organização**: Funções ajudam a dividir o código em partes menores e mais manejáveis.
+> - **Modularidade**: Permite que você crie código modular que pode ser facilmente testado e depurado.
+> - **Abstração**: Oculta a complexidade e permite que você trabalhe com operações de forma mais simples e compreensível.
+
+ > Mas dentre as funções existem varios tipos que podem ser usadas em diferentes contextos/ ou resolver  diferentes problemas. </br>
+
+ **Vamos ver umpouco mais sobre cada uma delas:**
+
+ ####  3.1. Função Simples
+
+    ```JS
+    
+        // Função para somar dois números
+        function somar(a, b) {
+        return a + b;
+        }
+
+        // Chamando a função
+        const resultado = somar(5, 3);
+        console.log(resultado); // Saída: 8
+
+    ```
