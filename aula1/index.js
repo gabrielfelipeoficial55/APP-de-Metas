@@ -1,25 +1,25 @@
 // arrays and object
 
-const meta = {
+let meta = { //  object
 
     value:  "Ler um livro por mês",  
-    checked: false,
-    log: (info)  => { // Usando uma arrow  function para criar uma função dentro de uma propriedade, do meu obje meta.
-        // usando parâmetro info para passar o valor que quero atribuir a essa arrow function.
-
-        console.log(info); // Usando o console.log para exibir o parameteo de sua arrow function
-
-    }
+    checked: true
 
 }
 
-meta.value = "Não é mais ler um livro"; // Reatribuindo o valor de uma  propriedade do meu objeto meta.
+let metas = [ //  array coleção de objects(Metas)
 
-meta.log(meta.value);
+    meta, //   object armazenado em um array
 
-// Function 
+    {  //  object armazenado em um array.
 
-//const criarMeta = () => { }// Criando uma arrow function para criar uma meta
 
-//function criarMeta() {} //  Criando uma função comum para criar uma meta
 
+        value: "Caminhar 20 minutos todos os dias",
+        checked: false
+
+    }
+
+]
+
+console.log(metas[1].value); //acessando o array no indice 1 e puxando o valor da propriedade value de um object armazenado no arrey, mas que foi criado fora do array.

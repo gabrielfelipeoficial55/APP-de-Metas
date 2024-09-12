@@ -112,6 +112,18 @@ para resolver problemas.
     Exemplos: ```1.23, 1.34, 12.34```
 
 
+####  2.3. Boolean
+- São valores que podem ser verdadeiro ou falso. </br>
+Exemplos:
+
+    ```JS 
+
+        const boolensModelo =  true; // True é verdadeiro e false é falso.
+        const boolensModelo =  false; // True é verdadeiro e false é falso.
+
+
+    ```
+
 
 ---
 
@@ -217,7 +229,7 @@ Exemplos: </br>
  ####  3.1. Função Simples
 
     ```JS
-    
+
         // Função para somar dois números
         function somar(a, b) {
         return a + b;
