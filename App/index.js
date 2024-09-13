@@ -4,32 +4,40 @@ const start = async () => { // Função que inicía a aplicação
     
     while(true) { // Estrutura de Repetição
         
-        const opcao = await select({
+        const opcao = await select({ //  Função que seleciona a opção do usuário usando o prompt do pacote  @inquirer/prompts 
 
-            message: "Menu >",
-            choices: [
+            message: "Menu >",  // Mensagem que é exibida ao usuário
+            choices: [  // Opções que o usuário pode escolher
 
                 {
 
-                    name: "Cadastrar Meta",
-                    value: "cadastrar"
+                    name: "Cadastrar Meta", // Nome da opção
+                    value: "cadastrar"   // Valor da opção
+
 
                 },
 
                 {
 
-                    name: "Sair",
-                    value: "sair"
+                    name: "Listar Metas", // Nome da opção
+                    value: "listar" // Valor da opção
+
+                },
+
+                {
+
+                    name: "Sair", // Nome da opção
+                    value: "sair" // Valor da opção
 
                 }
 
             ]
 
-        })
+        });
 
         switch(opcao) { //  Estrutura de Decisão / Condicional
 
-            case "Cadastar": //   Caso em que a opção é "Cadastar"
+            case "cadastrar": //   Caso em que a opção é "Cadastar"
 
                 console.log("Vamos cadastrar"); // Saída para quando o caso seja opcao "Cadastar".
 
@@ -42,6 +50,8 @@ const start = async () => { // Função que inicía a aplicação
                 break // Encerra o caso
 
             case "sair": // Caso em que a opção é "Sair"
+
+                console.log("Até a próxima");
 
                 return //  Encerra a função.
 
