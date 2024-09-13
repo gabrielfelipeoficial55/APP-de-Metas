@@ -10,11 +10,11 @@ para resolver problemas.
 
 - [x] Comentários
 - [x] Doclaração de Variáveis (const , let)
-- Operadoeres ([x]Atribuição, Concatenação,  Comparação, Matemáticos, Lógicos)
-- Tipos de Dados (String, Number, Boolean, Null, Undefined)
-- Estrutura de Dados (Functions, Object,  Array)
+- Operadoeres ([x]Atribuição, [x]Concatenação,  [x]Comparação, Matemáticos, [x]Lógicos)
+- Tipos de Dados ([x]String, [x]Number, [x]Boolean, Null, Undefined)
+- Estrutura de Dados ([x]Functions, [x]Object, [x]Array)
 - Controle de Fluxo (If, Else)
--  Loop (For, While)
+-  Loop (For, [x]While)
 
 
 ## Entender de forma clara e objetiva fases da resolução de um problema
@@ -226,7 +226,7 @@ Exemplos: </br>
 
  **Vamos ver umpouco mais sobre cada uma delas:**
 
- ####  3.1. Função Simples
+####  3.1. Função Simples
 
     ```JS
 
