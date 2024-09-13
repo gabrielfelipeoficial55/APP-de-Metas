@@ -167,6 +167,61 @@ Exemplos: </br>
 >       - Se você estiver usando strings, ele fará a concatenação.
 
 
+### 3.  Operador de Comparação
+-  São usados para comparar valores. </br>
+ Exemplos: </br>
+
+#### 3.1. Operador de Igualdade
+
+ **Para verificar / comparar se um valor é igual ao outro usamos  o operador `==` ou `===`**
+ - `==` é usado para comparar valores, mas ele não verifica o tipo de dado.
+ - `===` é usado para comparar valores e verificar o tipo de dado.
+
+####  3.2. Operador de Desigualdade / Diferente
+**Para verificar / comparar se um valor é diferente do outro usamos o operador `!= ` ou `!==`**
+- `!=` é usado para comparar valores, mas ele não verifica o tipo de dado.
+- `!==` é usado para comparar valores e verificar o tipo de dado.
+
+#### 3.3. Operador de Maior que
+**Para verificar / comparar se um valor é maior que o outro usamos o operador ` >`**
+- Ele é usado para comparar valores numéricos.
+- Ele não é usado para comparar strings.
+- Ele não é usado para comparar arrays ou objetos.
+- Ele não é usado para comparar booleanos.
+- Ele não é usado para comparar null ou undefined.
+- Ele não é usado para comparar NaN (Not a Number).
+
+####  3.4.  Operador de Menor que
+**Para verificar / comparar se um valor é menor que o outro usamos o operador `< `**
+- Ele é usado para comparar valores numéricos.
+- Ele não é usado para comparar strings.
+- Ele não é usado para comparar arrays ou objetos.
+- Ele não é usado para comparar booleanos.
+- Ele não é usado para comparar null ou undefined.
+- Ele não é usado para comparar NaN (Not a Number).
+
+####  3.5. Operador de Maior ou Igual que
+**Para verificar / comparar se um valor é maior ou igual ao outro usamos o operador  `>=`**
+- Ele é usado para comparar valores numéricos.
+- Ele não é usado para comparar strings.
+- Ele não é usado para comparar arrays ou objetos.
+- Ele não é usado para comparar booleanos.
+- Ele não é usado para comparar null ou undefined.
+- Ele não é usado para comparar NaN (Not a Number).
+
+####  3.6. Operador de Menor ou Igual que
+**Para verificar / comparar se um valor é menor ou igual ao outro usamos o operador  `<=`**
+- Ele é usado para comparar valores numéricos.
+- Ele não é usado para comparar strings.
+- Ele não é usado para comparar arrays ou objetos.
+- Ele não é usado para comparar booleanos.
+- Ele não é usado para comparar null ou undefined.
+- Ele não é usado para comparar NaN (Not a Number).
+
+
+
+
+
 ## Estruras de Dados 
 
 ### 1.  Arrays
@@ -291,7 +346,7 @@ Exemplos: </br>
 
 - Estruturas condicionais são usadas para executar um bloco de código dependendo de uma condição. Elas permitem que você execute um conjunto de instruções se uma  condição for verdadeira ou falsa.
 
-### Estrutura condicional Switch
+### 1.1 Estrutura condicional Switch
 - A estrutura condicional `switch` é usada para comparar um valor com vários valores possíveis e executar um bloco de código correspondente.
 
  - A sintaxe básica da estrutura condicional `switch` é a seguinte:
@@ -340,6 +395,25 @@ Exemplos: </br>
             */
 
         ```
+
+### 1.2 Estrutura Condicional (IF &  ELSE)
+-  A sintaxe básica da estrutura condicional `if` é a seguinte:
+
+    ```JS 
+
+        if (condição) {
+
+            // bloco de código a ser executado se a condição for verdadeira
+
+        }else {
+
+            // bloco de código a ser executado se a condição for falsa
+
+        }
+
+    ```
+
+
 
 
 ## Módulos em node.js
