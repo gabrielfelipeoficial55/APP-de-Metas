@@ -1,8 +1,31 @@
-function start() { // Função que inicía a aplicação
+const { select } = require('@inquirer/prompts')
+
+const start = async () => { // Função que inicía a aplicação
     
     while(true) { // Estrutura de Repetição
         
-        let opcao = "sair"; //  Variável que armazena a opção escolhida pelo usuário.
+        const opcao = await select({
+
+            message: "Menu >",
+            choices: [
+
+                {
+
+                    name: "Cadastrar Meta",
+                    value: "cadastrar"
+
+                },
+
+                {
+
+                    name: "Sair",
+                    value: "sair"
+
+                }
+
+            ]
+
+        })
 
         switch(opcao) { //  Estrutura de Decisão / Condicional
 

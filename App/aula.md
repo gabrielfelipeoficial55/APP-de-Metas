@@ -288,6 +288,7 @@ Exemplos: </br>
     ```
 
 ## Estruturas Condicionais
+
 - Estruturas condicionais são usadas para executar um bloco de código dependendo de uma condição. Elas permitem que você execute um conjunto de instruções se uma  condição for verdadeira ou falsa.
 
 ### Estrutura condicional Switch
@@ -339,3 +340,9 @@ Exemplos: </br>
             */
 
         ```
+
+
+## Módulos em node.js
+
+- [x] Importação de módulos (require, CommonJS)
+- [x] Biblioteca 'inquirer', para criar prompts interativos.
