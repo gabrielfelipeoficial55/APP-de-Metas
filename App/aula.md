@@ -219,6 +219,14 @@ Exemplos: </br>
 - Ele não é usado para comparar NaN (Not a Number).
 
 
+### 4. Spread Operator (Operador de Espalhar)
+**O operador de espalhar é usado para criar uma cópia de um array ou objeto. Ele é representado pelo símbolo `...`**
+- Ele é usado para criar uma cópia de um array ou objeto.
+- Ele é usado para criar uma cópia de um array ou objeto e adicionar elementos a ele.
+- Ele é usado para criar uma cópia de um array ou objeto e remover elementos dele.
+- Ele é usado para criar uma cópia de um array ou objeto e modificar elementos dele.
+
+
 
 
 
@@ -237,7 +245,8 @@ Exemplos: </br>
 
     ```
 
-    **- Nos arrays podemos acessar aguns metodos  como: push, find, forEach
+**- Nos arrays podemos acessar aguns metodos  como: push, [find, forEach, filter]: HOF  (Higher Order Function)**
+
 
 ###  2. Objetos
 - Em JavaScript, um objeto é uma coleção de propriedades, onde cada propriedade é uma associação entre uma chave (ou nome) e um valor. Os objetos permitem agrupar dados relacionados e funções que podem ser usadas para operar nesses dados. </br>

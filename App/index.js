@@ -73,6 +73,33 @@ const listarMetas = async () => {
 
 }
 
+// Função que mostra uma lista de metas realizadas.
+const listarMetasRealizadas = async () => {
+
+    const realizadas = metas.filter((meta) => {
+
+        return meta.checked;
+
+    });
+
+    if(realizadas.length == 0) {
+
+        console.log("Não existem metas realizadas :(");
+
+        return
+
+    };
+
+    await select({
+
+        message: "Metas Realizadas",
+
+        choices: [...realizadas]
+
+    })
+
+};
+
 const start = async () => { // Função que inicía a aplicação
     
     while(true) { // Estrutura de Repetição
@@ -99,6 +126,13 @@ const start = async () => { // Função que inicía a aplicação
 
                 {
 
+                    name: "Metas Realizadas", // Nome da opção
+                    value: "realizadas" // Valor da opção
+
+                },
+
+                {
+
                     name: "Sair", // Nome da opção
                     value: "sair" // Valor da opção
 
@@ -118,9 +152,14 @@ const start = async () => { // Função que inicía a aplicação
 
             case "listar": //  Caso em que a opção é "listar"
 
-                await listarMetas();
+                await listarMetas();  // Chamada da função listarMetas
+                break; // Encerra o caso
 
-                break // Encerra o caso
+            case "realizadas":
+
+                await listarMetasRealizadas();  // Chamada da função listarMetasRealizadas
+
+                break; // Encerra o caso
 
             case "sair": // Caso em que a opção é "Sair"
 
