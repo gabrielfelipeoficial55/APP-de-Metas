@@ -237,6 +237,8 @@ Exemplos: </br>
 
     ```
 
+    **- Nos arrays podemos acessar aguns metodos  como: push, find, forEach
+
 ###  2. Objetos
 - Em JavaScript, um objeto é uma coleção de propriedades, onde cada propriedade é uma associação entre uma chave (ou nome) e um valor. Os objetos permitem agrupar dados relacionados e funções que podem ser usadas para operar nesses dados. </br>
 Exemplos: </br>
