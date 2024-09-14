@@ -1,4 +1,4 @@
-const { select, input } = require('@inquirer/prompts')
+const { select, input, checkbox } = require('@inquirer/prompts');
 
 let meta = {
 
@@ -7,26 +7,69 @@ let meta = {
     
 }
 
-let metas = [ meta ]
+let metas = [ meta ];
 
 // Função cadastrar meta
 const cadastarMeta = async () => {
 
     const meta = await input({message: "Digite  a meta que você deseja alcançar:"})
 
-    if(meta.length === 0){
+    if(meta.length == 0){
 
         console.log("A meta não pode ser vasia.")
         return
 
-    }
+    };
 
     metas.push({
 
         value: meta, 
-        checked:  false
+        checked: false
+
+    });
+
+}
+
+// Função para listar metas
+const listarMetas = async () => {
+
+    const respostas = await checkbox({
+
+        message: "Use as setas para navegar entre as opções do menu, e use o espaço para marcar ou desmarcar a opção desejada, e Enter para sair.",
+
+        choices: [...metas],
+
+        instructions: false
+
+    });
+
+
+    if(respostas.length == 0) {
+
+        console.log("Nenhuma foi meta selecionada!");
+        return;
+
+    };
+
+    metas.forEach((m) => {
+
+        m.checked = false;
 
     })
+
+    respostas.forEach((resposta) => {
+
+        const meta =  metas.find((m) => {
+
+            return m.value == resposta;
+
+        });
+
+        meta.checked = true;
+
+    });
+ 
+    console.log("Mata(s) concluída(a)");
 
 }
 
@@ -70,19 +113,18 @@ const start = async () => { // Função que inicía a aplicação
             case "cadastrar": //   Caso em que a opção é "Cadastar"
 
                 await cadastarMeta(); // Chamada da função cadastrarMeta
-                console.log(metas);
 
                 break // Encerra o caso.
 
             case "listar": //  Caso em que a opção é "listar"
 
-                console.log("Listar");  // Saída para quando o caso seja opcao "listar".
+                await listarMetas();
 
                 break // Encerra o caso
 
             case "sair": // Caso em que a opção é "Sair"
 
-                console.log("Até a próxima");
+                console.log(" Foi um prazer te ver por aqui novamente, Até a próxima!");
 
                 return //  Encerra a função.
 
