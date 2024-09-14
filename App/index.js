@@ -43,6 +43,11 @@ const listarMetas = async () => {
 
     });
 
+    metas.forEach((m) => {
+
+        m.checked = false;
+
+    })
 
     if(respostas.length == 0) {
 
@@ -50,12 +55,6 @@ const listarMetas = async () => {
         return;
 
     };
-
-    metas.forEach((m) => {
-
-        m.checked = false;
-
-    })
 
     respostas.forEach((resposta) => {
 
