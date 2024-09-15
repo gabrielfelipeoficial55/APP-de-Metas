@@ -1,7 +1,7 @@
 - [x] Criar Metas 
 - [x] Listar Metas
-    - [x] Metas Realizadas
-    - Metas em Aberto
+    - [x] Metas Realizadas + Quantidade em número
+    - [x] Metas em Aberto + Quantidade em número
 - [x] Marcar/Desmarcar Metas como concluídas
 - Remover Metas
 - Editar Metas

@@ -91,13 +91,39 @@ const listarMetasRealizadas = async () => {
 
     await select({
 
-        message: "Metas Realizadas",
+        message: "Metas Realizadas " +  realizadas.length,
+
 
         choices: [...realizadas]
 
     })
 
 };
+
+// Função que mostra uma lista de metas não realizadas.
+const listarMetasEmAberto = async () => {
+
+    const abertas = metas.filter((meta) => {
+
+        return !meta.checked; // Usando o operador de inversão "!" para selecionar as metas não realizadas.
+
+    });
+
+    if(abertas.length == 0) {
+
+        console.log("Existem metas abertas :)");
+        return
+
+    }
+
+    await select({
+
+        message: "Metas em Aberto " + abertas.length,
+        choices: [...abertas]
+
+    })
+
+}
 
 const start = async () => { // Função que inicía a aplicação
     
@@ -132,6 +158,13 @@ const start = async () => { // Função que inicía a aplicação
 
                 {
 
+                    name: "Metas em Aberto", // Nome da opção
+                    value: "abertas" // Valor da opção
+
+                },
+
+                {
+
                     name: "Sair", // Nome da opção
                     value: "sair" // Valor da opção
 
@@ -159,6 +192,12 @@ const start = async () => { // Função que inicía a aplicação
                 await listarMetasRealizadas();  // Chamada da função listarMetasRealizadas
 
                 break; // Encerra o caso
+
+            case "abertas":
+
+                await listarMetasEmAberto();
+
+                break; //  Encerra o caso
 
             case "sair": // Caso em que a opção é "Sair"
 
