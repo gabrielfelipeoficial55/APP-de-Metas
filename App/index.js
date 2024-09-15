@@ -170,15 +170,17 @@ const  deletarMeta = async (meta) => {
 
 };
 
+// Função de sistema de mensagem.
 const mostrarMensagem = () => {
 
-    console.clear();
+    console.clear();// Limpando o terminal para apresentar as saídas(Dados manipulados ou alterados) , pelo App para o usuário.
 
-    if(mensagem != "") {
+    if(mensagem != "") {  // Verificando se a mensagem não está vazia.
 
-        console.log(mensagem);
-        console.log("");
-        mensagem = "";
+        console.log(mensagem);  // Exibindo a mensagem no terminal.
+        console.log("");  // Adicionando uma linha em branco para melhorar a visualização.
+        mensagem = "";   // Limpar a mensagem para evitar a repetição da mensagem.
+
 
     }
 
@@ -280,8 +282,7 @@ const start = async () => { // Função que inicía a aplicação
 
 start (); // Inicia a aplicação.
 
-/*
-
+/* Detalhes sobre a estrutura de repetição while na linha 191.
     Atenção : O código assima como um exemplo de como funciona a estrutura de repetição while e a estrutura de decisão switch, nesse caso a estrutura de repetição é sempre true então ela vai sempre ser executada,
     quando os casos forem Cadastrar e listar, o programa será execultada infinitamente, para sair deixe seu terminal selecionado é de o comando <ctrl + c> para a aplicação ser encerrada, caso seja sair, a aplicação executará o laço de repetição e condo chegar no caso sair o programa irá encerrar.
 
