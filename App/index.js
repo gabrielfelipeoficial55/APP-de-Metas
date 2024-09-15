@@ -1,15 +1,33 @@
 const { select, input, checkbox } = require('@inquirer/prompts');
+const fs = require("fs").promises;
 
 let mensagem = "😍 Bem Vindo(a) ao App de Metas. 📊";
 
-let meta = {
+let metas;
 
-    value: "Tomar 3 litos de água por dia",
-    checked: false
-    
+// Função carregar metas com arquivo json
+const carregarMetas =  async () => {
+
+    try { 
+
+        const dados = await fs.readFile("metas.json", "utf-8");
+        metas = JSON.parse(dados);
+
+    }
+    catch (erro) {
+
+        metas = [];
+
+    };
+
 };
 
-let metas = [ meta ];
+// Função para salvar as metas no arquivo json
+const salvarMetas = async () => {
+
+    await fs.writeFile("metas.json", JSON.stringify(metas, null, 2));
+
+};
 
 // Função cadastrar meta
 const cadastarMeta = async () => {
@@ -187,10 +205,13 @@ const mostrarMensagem = () => {
 };
 
 const start = async () => { // Função que inicía a aplicação
+
+    await carregarMetas(); // Executando a função para carregar as metas.
     
     while(true) { // Estrutura de Repetição
-        
+
         mostrarMensagem();
+        await salvarMetas(); // Executando a função para salvar as metas.
 
         const opcao = await select({ //  Função que seleciona a opção do usuário usando o prompt do pacote  @inquirer/prompts 
 
