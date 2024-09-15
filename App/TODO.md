@@ -3,6 +3,6 @@
     - [x] Metas Realizadas + Quantidade em número
     - [x] Metas em Aberto + Quantidade em número
 - [x] Marcar/Desmarcar Metas como concluídas
-- Remover Metas
+- [x] Remover Metas
 - Editar Metas
 - Sistema Mensagem

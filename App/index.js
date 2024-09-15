@@ -91,7 +91,7 @@ const listarMetasRealizadas = async () => {
 
     await select({
 
-        message: "Metas Realizadas " +  realizadas.length,
+        message: "Metas Realizadas: " +  realizadas.length,
 
 
         choices: [...realizadas]
@@ -118,10 +118,52 @@ const listarMetasEmAberto = async () => {
 
     await select({
 
-        message: "Metas em Aberto " + abertas.length,
+        message: "Metas em Aberto: " + abertas.length,
         choices: [...abertas]
 
     })
+
+}
+
+// Função de Deletar metas
+const  deletarMeta = async (meta) => {
+
+    const metasDesmarcadas = metas.map((meta) => { //  Usando o método map() para criar uma nova lista com as metas desmarcadas.
+
+        return {value: meta.value, checked: false};  // Desmarcando a meta.
+
+    });
+
+
+    const itemsADeletar = await checkbox({
+
+        message: "Selecione item para deletar.",
+
+        choices: [...metasDesmarcadas],
+
+        instructions: false
+
+    });
+
+    if (itemsADeletar.length == 0) {
+
+        console.log("Nenhum item para deletar."); 
+        return
+
+    };
+
+
+    itemsADeletar.forEach((item) => {
+
+        metas = metas.filter((meta) => {
+
+            return meta.value != item
+
+        });
+
+    });
+
+    console.log("Meta(s) Deletada(s) com sucesso!");
 
 }
 
@@ -165,6 +207,13 @@ const start = async () => { // Função que inicía a aplicação
 
                 {
 
+                    name: "Deletar Metas", // Nome da opção
+                    value: "deletar" // Valor da opção
+
+                },
+
+                {
+
                     name: "Sair", // Nome da opção
                     value: "sair" // Valor da opção
 
@@ -198,6 +247,10 @@ const start = async () => { // Função que inicía a aplicação
                 await listarMetasEmAberto();
 
                 break; //  Encerra o caso
+
+            case "deletar":
+                await deletarMeta(); // Chamada da função deletarMeta
+                break; // Encerra o caso.
 
             case "sair": // Caso em que a opção é "Sair"
 
