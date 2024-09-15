@@ -1,22 +1,24 @@
 const { select, input, checkbox } = require('@inquirer/prompts');
 
+let mensagem = "😍 Bem Vindo(a) ao App de Metas. 📊";
+
 let meta = {
 
     value: "Tomar 3 litos de água por dia",
     checked: false
     
-}
+};
 
 let metas = [ meta ];
 
 // Função cadastrar meta
 const cadastarMeta = async () => {
 
-    const meta = await input({message: "Digite  a meta que você deseja alcançar:"})
+    const meta = await input({message: "Digite  a meta que você deseja alcançar:"});
 
     if(meta.length == 0){
 
-        console.log("A meta não pode ser vasia.")
+        mensagem = "[] A meta não pode ser vasia. ❌";
         return
 
     };
@@ -28,7 +30,9 @@ const cadastarMeta = async () => {
 
     });
 
-}
+    mensagem = "😀 Meta cadastrada com sucesso! 👍";
+
+};
 
 // Função para listar metas
 const listarMetas = async () => {
@@ -47,11 +51,11 @@ const listarMetas = async () => {
 
         m.checked = false;
 
-    })
+    });
 
     if(respostas.length == 0) {
 
-        console.log("Nenhuma foi meta selecionada!");
+        mensagem = "😔 Nenhuma foi meta selecionada!👆";
         return;
 
     };
@@ -68,9 +72,10 @@ const listarMetas = async () => {
 
     });
  
-    console.log("Mata(s) concluída(a)");
+    mensagem = "😀 Meta(s) marcada(s) como concluída(s) com sucesso! ✅";
 
-}
+
+};
 
 // Função que mostra uma lista de metas realizadas.
 const listarMetasRealizadas = async () => {
@@ -83,17 +88,14 @@ const listarMetasRealizadas = async () => {
 
     if(realizadas.length == 0) {
 
-        console.log("Não existem metas realizadas :(");
-
-        return
+        mensagem = "😔 Não existem meta(s) realizada(s) :(";
+        return;
 
     };
 
     await select({
 
         message: "Metas Realizadas: " +  realizadas.length,
-
-
         choices: [...realizadas]
 
     })
@@ -111,22 +113,23 @@ const listarMetasEmAberto = async () => {
 
     if(abertas.length == 0) {
 
-        console.log("Existem metas abertas :)");
-        return
+        mensagem = "❎ Não Existe(m) meta(s) em aberto :)";
+        return;
 
-    }
+    };
 
     await select({
 
         message: "Metas em Aberto: " + abertas.length,
         choices: [...abertas]
 
-    })
+    });
 
-}
+};
 
 // Função de Deletar metas
-const  deletarMeta = async (meta) => {
+const  deletarMeta = async (meta) => {  
+
 
     const metasDesmarcadas = metas.map((meta) => { //  Usando o método map() para criar uma nova lista com as metas desmarcadas.
 
@@ -137,7 +140,7 @@ const  deletarMeta = async (meta) => {
 
     const itemsADeletar = await checkbox({
 
-        message: "Selecione item para deletar.",
+        message: "👆 Selecione item para deletar.",
 
         choices: [...metasDesmarcadas],
 
@@ -147,7 +150,7 @@ const  deletarMeta = async (meta) => {
 
     if (itemsADeletar.length == 0) {
 
-        console.log("Nenhum item para deletar."); 
+        mensagem = "😣 Nenhuma meta foi selecionada para ser deletada."; 
         return
 
     };
@@ -157,20 +160,36 @@ const  deletarMeta = async (meta) => {
 
         metas = metas.filter((meta) => {
 
-            return meta.value != item
+            return meta.value != item;
 
         });
 
     });
 
-    console.log("Meta(s) Deletada(s) com sucesso!");
+    mensagem = "✅ A(s) meta(s) selecionada(s), foi(foram) deletada(s) com sucesso! ❌";
 
-}
+};
+
+const mostrarMensagem = () => {
+
+    console.clear();
+
+    if(mensagem != "") {
+
+        console.log(mensagem);
+        console.log("");
+        mensagem = "";
+
+    }
+
+};
 
 const start = async () => { // Função que inicía a aplicação
     
     while(true) { // Estrutura de Repetição
         
+        mostrarMensagem();
+
         const opcao = await select({ //  Função que seleciona a opção do usuário usando o prompt do pacote  @inquirer/prompts 
 
             message: "Menu >",  // Mensagem que é exibida ao usuário
@@ -180,7 +199,6 @@ const start = async () => { // Função que inicía a aplicação
 
                     name: "Cadastrar Meta", // Nome da opção
                     value: "cadastrar"   // Valor da opção
-
 
                 },
 
@@ -228,7 +246,6 @@ const start = async () => { // Função que inicía a aplicação
             case "cadastrar": //   Caso em que a opção é "Cadastar"
 
                 await cadastarMeta(); // Chamada da função cadastrarMeta
-
                 break // Encerra o caso.
 
             case "listar": //  Caso em que a opção é "listar"
@@ -239,13 +256,11 @@ const start = async () => { // Função que inicía a aplicação
             case "realizadas":
 
                 await listarMetasRealizadas();  // Chamada da função listarMetasRealizadas
-
                 break; // Encerra o caso
 
             case "abertas":
 
                 await listarMetasEmAberto();
-
                 break; //  Encerra o caso
 
             case "deletar":
@@ -254,16 +269,14 @@ const start = async () => { // Função que inicía a aplicação
 
             case "sair": // Caso em que a opção é "Sair"
 
-                console.log(" Foi um prazer te ver por aqui novamente, Até a próxima!");
-
+                console.log("Foi um prazer te ver por aqui novamente, Até a próxima!👋");
                 return //  Encerra a função.
 
+        };
 
-        }
+    };
 
-    }
-
-}
+};
 
 start (); // Inicia a aplicação.
 

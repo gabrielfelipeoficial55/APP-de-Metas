@@ -245,7 +245,7 @@ Exemplos: </br>
 
     ```
 
-**- Nos arrays podemos acessar aguns metodos  como: push, [find, forEach, filter]: HOF  (Higher Order Function)**
+**- Nos arrays podemos acessar aguns metodos  como: push, [find, forEach, filter, map]: HOF  (Higher Order Function)**
 
 
 ###  2. Objetos

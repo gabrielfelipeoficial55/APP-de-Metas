@@ -4,5 +4,4 @@
     - [x] Metas em Aberto + Quantidade em número
 - [x] Marcar/Desmarcar Metas como concluídas
 - [x] Remover Metas
-- Editar Metas
-- Sistema Mensagem
+- [x] Sistema Mensagem
