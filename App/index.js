@@ -55,6 +55,14 @@ const cadastarMeta = async () => {
 // Função para listar metas
 const listarMetas = async () => {
 
+    // Verificação  se há metas cadastradas ou salvas
+    if(metas.length == 0) {
+
+        mensagem = "Ainda não existem metas!"
+        return
+
+    };
+
     const respostas = await checkbox({
 
         message: "Use as setas para navegar entre as opções do menu, e use o espaço para marcar ou desmarcar a opção desejada, e Enter para sair.",
@@ -98,6 +106,14 @@ const listarMetas = async () => {
 // Função que mostra uma lista de metas realizadas.
 const listarMetasRealizadas = async () => {
 
+    // Verificação  se há metas cadastradas ou salvas
+    if(metas.length == 0) {
+
+        mensagem = "Ainda não existem metas!"
+        return
+
+    };
+
     const realizadas = metas.filter((meta) => {
 
         return meta.checked;
@@ -122,7 +138,15 @@ const listarMetasRealizadas = async () => {
 
 // Função que mostra uma lista de metas não realizadas.
 const listarMetasEmAberto = async () => {
+    
+    // Verificação  se há metas cadastradas ou salvas
+    if(metas.length == 0) {
 
+        mensagem = "Ainda não existem metas!"
+        return
+
+    };
+    
     const abertas = metas.filter((meta) => {
 
         return !meta.checked; // Usando o operador de inversão "!" para selecionar as metas não realizadas.
@@ -147,7 +171,14 @@ const listarMetasEmAberto = async () => {
 
 // Função de Deletar metas
 const  deletarMeta = async (meta) => {  
+    
+    // Verificação  se há metas cadastradas ou salvas
+    if(metas.length == 0) {
 
+        mensagem = "Ainda não existem metas!"
+        return
+
+    };
 
     const metasDesmarcadas = metas.map((meta) => { //  Usando o método map() para criar uma nova lista com as metas desmarcadas.
 

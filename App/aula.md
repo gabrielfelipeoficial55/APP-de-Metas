@@ -431,7 +431,15 @@ Exemplos: </br>
 
 - [x] Importação de módulos (require, CommonJS)
 - [x] Biblioteca 'inquirer', para criar prompts interativos.
+- [x] Biblioteca 'fs'(File System), para manipulação de arquivos.
+
+### 1.1 JSON
+
+- [x] Javascript Object Notation (.json).
+- [x] JSON.parce(), usado para transformar um arquivo json para javascript.
+- [x] JSON.stringify(). usado  para transformar um arquivo de javascript em um arquivo json.
+
 
 ## Programação assíncrona e Promises
 
-- [x] Uso de funções assíncronas (async/await)
+- [x] Uso de funções assíncronas (async/await).
