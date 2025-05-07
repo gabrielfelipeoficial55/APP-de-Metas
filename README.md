@@ -34,4 +34,4 @@ Esse projeto está sob a licença MIT.
 
 ---
 
-Feito com ♥ by adapted by Gabriel Felipe de Oliveira Rateiro.
+Feito com ♥ adapted by Gabriel Felipe de Oliveira Rateiro.
