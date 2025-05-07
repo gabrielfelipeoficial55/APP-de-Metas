@@ -1,7 +1,7 @@
 <h1 align="center"> App Goals</h1>
 
 <p align="center">
-Criação feita por Gabriel Felipe de Oliveira Rateiro, para ajudar pessoas em geral a terem sua metas não apenas listadas e gerenciadas mastambém organizadas para alcançar de forma mais eficiente. <br/>
+Criação feita por Gabriel Felipe de Oliveira Rateiro, para ajudar pessoas em geral a terem sua metas não apenas listadas e gerenciadas mas também organizadas para alcançar de forma mais eficiente. <br/>
 
 
 <p align="center">
